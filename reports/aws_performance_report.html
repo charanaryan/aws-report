@@ -1,0 +1,1282 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta charset="UTF-8">
+
+<title>AWS Performance Report</title>
+
+<style>
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    background: #f4f6f8;
+    color: #202124;
+}
+
+.container {
+    width: 94%;
+    max-width: 1400px;
+    margin: 30px auto;
+}
+
+.header {
+    background: #172033;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.header h1 {
+    margin: 0 0 10px 0;
+    font-size: 30px;
+}
+
+.header p {
+    margin: 5px 0;
+    color: #d8dee9;
+}
+
+.section {
+    background: white;
+    margin-top: 24px;
+    padding: 24px;
+    border-radius: 10px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+}
+
+.section h2 {
+    margin-top: 0;
+    border-bottom: 2px solid #e5e7eb;
+    padding-bottom: 10px;
+}
+
+.cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 15px;
+}
+
+.card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 18px;
+    border-radius: 8px;
+}
+
+.card .number {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.card .label {
+    margin-top: 6px;
+    color: #64748b;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+th {
+    background: #eef2f7;
+    text-align: left;
+}
+
+th, td {
+    border: 1px solid #d9dee7;
+    padding: 9px;
+    font-size: 13px;
+}
+
+tr:nth-child(even) {
+    background: #fafafa;
+}
+
+.badge {
+    display: inline-block;
+    padding: 4px 8px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.review {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.observation {
+    background: #e8f1ff;
+    color: #174ea6;
+}
+
+.ok {
+    background: #e7f6ec;
+    color: #137333;
+}
+
+.warning {
+    background: #fff3cd;
+    color: #856404;
+}
+
+.footer {
+    text-align: center;
+    color: #64748b;
+    margin: 30px 0;
+    font-size: 12px;
+}
+
+.note {
+    background: #f8fafc;
+    border-left: 4px solid #64748b;
+    padding: 14px;
+    margin-top: 15px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<h1>AWS Master Performance Report</h1>
+
+<p>CloudWatch-based AWS infrastructure performance analysis</p>
+
+<p>Generated: 2026-10-03 19:49 UTC</p>
+
+<p>Analysis Period: Last 7 Days</p>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- EXECUTIVE SUMMARY -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>1. Executive Summary</h2>
+
+<div class="cards">
+
+<div class="card">
+<div class="number">807</div>
+<div class="label">Inventory Resources</div>
+</div>
+
+<div class="card">
+<div class="number">39</div>
+<div class="label">Metric Rows</div>
+</div>
+
+<div class="card">
+<div class="number">18</div>
+<div class="label">Regions</div>
+</div>
+
+<div class="card">
+<div class="number">4</div>
+<div class="label">Services Analyzed</div>
+</div>
+
+<div class="card">
+<div class="number">3</div>
+<div class="label">EC2 Instances</div>
+</div>
+
+<div class="card">
+<div class="number">3</div>
+<div class="label">EBS Volumes</div>
+</div>
+
+<div class="card">
+<div class="number">1</div>
+<div class="label">ALBs</div>
+</div>
+
+<div class="card">
+<div class="number">1</div>
+<div class="label">Auto Scaling Groups</div>
+</div>
+
+</div>
+
+<div class="note">
+
+<b>Overall observation:</b>
+
+The current performance dataset contains CloudWatch observations
+for EC2, EBS, Application Load Balancer and Auto Scaling resources.
+Three EC2 instances were observed with low average CPU utilization.
+One EC2 instance recorded a maximum CPU value of 100% during the
+analysis period. No EC2 status-check failures were observed in the
+collected dataset.
+
+</div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- RESOURCE INVENTORY -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>2. AWS Resource Inventory</h2>
+
+<table>
+
+<tr>
+<th>Service</th>
+<th>Resource Count</th>
+</tr>
+
+<tr>
+<td>ec2</td>
+<td>406</td>
+</tr>
+
+<tr>
+<td>memorydb</td>
+<td>109</td>
+</tr>
+
+<tr>
+<td>iam</td>
+<td>71</td>
+</tr>
+
+<tr>
+<td>elasticache</td>
+<td>39</td>
+</tr>
+
+<tr>
+<td>athena</td>
+<td>34</td>
+</tr>
+
+<tr>
+<td>rds</td>
+<td>30</td>
+</tr>
+
+<tr>
+<td>resource-explorer-2</td>
+<td>23</td>
+</tr>
+
+<tr>
+<td>events</td>
+<td>19</td>
+</tr>
+
+<tr>
+<td>xray</td>
+<td>17</td>
+</tr>
+
+<tr>
+<td>kms</td>
+<td>16</td>
+</tr>
+
+<tr>
+<td>logs</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>elasticloadbalancing</td>
+<td>9</td>
+</tr>
+
+<tr>
+<td>apprunner</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>backup</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>s3</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>ecr</td>
+<td>3</td>
+</tr>
+
+<tr>
+<td>acm</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>route53</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>sns</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>ssm</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>cloudwatch</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>autoscaling</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>cloudfront</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>wafv2</td>
+<td>1</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- REGION OVERVIEW -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>3. Region Overview</h2>
+
+<table>
+
+<tr>
+<th>Region</th>
+<th>Inventory Resources</th>
+<th>Performance Metric Rows</th>
+</tr>
+
+<tr>
+<td>ap-northeast-1</td>
+<td>27</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-northeast-2</td>
+<td>27</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-northeast-3</td>
+<td>19</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-south-1</td>
+<td>133</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-south-2</td>
+<td>19</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-southeast-1</td>
+<td>37</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ap-southeast-2</td>
+<td>26</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>ca-central-1</td>
+<td>26</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>eu-central-1</td>
+<td>27</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>eu-north-1</td>
+<td>31</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>eu-west-1</td>
+<td>27</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>eu-west-2</td>
+<td>27</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>eu-west-3</td>
+<td>26</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>global</td>
+<td>75</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>sa-east-1</td>
+<td>26</td>
+<td>0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>154</td>
+<td>29</td>
+</tr>
+
+<tr>
+<td>us-west-1</td>
+<td>71</td>
+<td>10</td>
+</tr>
+
+<tr>
+<td>us-west-2</td>
+<td>29</td>
+<td>0</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- EC2 -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>4. EC2 Performance</h2>
+
+<table>
+
+<tr>
+<th>Instance</th>
+<th>Region</th>
+<th>Average CPU</th>
+<th>Maximum CPU</th>
+<th>Assessment</th>
+</tr>
+
+<tr>
+<td>i-0459f444830363d8a</td>
+<td>us-east-1</td>
+<td>1.11%</td>
+<td>13.07%</td>
+<td><span class="badge observation">Low Average CPU</span></td>
+</tr>
+
+<tr>
+<td>i-014980792be5e5138</td>
+<td>us-east-1</td>
+<td>1.26%</td>
+<td>12.61%</td>
+<td><span class="badge observation">Low Average CPU</span></td>
+</tr>
+
+<tr>
+<td>i-05c761bb30cd029a1</td>
+<td>us-west-1</td>
+<td>2.44%</td>
+<td>100.00%</td>
+<td><span class="badge review">Review CPU Peak</span></td>
+</tr>
+
+</table>
+
+<h3>Low Average CPU Instances</h3>
+
+<ul>
+
+<li>
+i-0459f444830363d8a
+(us-east-1) —
+average CPU 1.11%
+</li>
+
+<li>
+i-014980792be5e5138
+(us-east-1) —
+average CPU 1.26%
+</li>
+
+<li>
+i-05c761bb30cd029a1
+(us-west-1) —
+average CPU 2.44%
+</li>
+
+</ul>
+
+<h3>CPU Peak Instances Requiring Review</h3>
+
+<ul>
+
+<li>
+i-05c761bb30cd029a1
+(us-west-1) —
+maximum CPU 100.00%
+</li>
+
+</ul>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- EBS -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>5. EBS Performance</h2>
+
+<table>
+
+<tr>
+<th>Region</th>
+<th>Volume</th>
+<th>Metric</th>
+<th>Average</th>
+<th>Maximum</th>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-0f4745da336a024b4</td>
+<td>VolumeReadBytes</td>
+<td>122566.8267</td>
+<td>191017472.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-0f4745da336a024b4</td>
+<td>VolumeWriteBytes</td>
+<td>3036222.1576</td>
+<td>108369408.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-0f4745da336a024b4</td>
+<td>VolumeReadOps</td>
+<td>6.7937</td>
+<td>10591.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-0f4745da336a024b4</td>
+<td>VolumeWriteOps</td>
+<td>49.4719</td>
+<td>1001.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-00d63f2da91dfa655</td>
+<td>VolumeReadBytes</td>
+<td>105413.467</td>
+<td>191640064.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-00d63f2da91dfa655</td>
+<td>VolumeWriteBytes</td>
+<td>2902905.4054</td>
+<td>91129344.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-00d63f2da91dfa655</td>
+<td>VolumeReadOps</td>
+<td>5.8347</td>
+<td>10611.0</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>vol-00d63f2da91dfa655</td>
+<td>VolumeWriteOps</td>
+<td>51.0911</td>
+<td>842.0</td>
+</tr>
+
+<tr>
+<td>us-west-1</td>
+<td>vol-0ee5e27a823c11a3e</td>
+<td>VolumeReadBytes</td>
+<td>3340328.9304</td>
+<td>1415442432.0</td>
+</tr>
+
+<tr>
+<td>us-west-1</td>
+<td>vol-0ee5e27a823c11a3e</td>
+<td>VolumeWriteBytes</td>
+<td>6269730.181</td>
+<td>2377715712.0</td>
+</tr>
+
+<tr>
+<td>us-west-1</td>
+<td>vol-0ee5e27a823c11a3e</td>
+<td>VolumeReadOps</td>
+<td>52.721</td>
+<td>16817.0</td>
+</tr>
+
+<tr>
+<td>us-west-1</td>
+<td>vol-0ee5e27a823c11a3e</td>
+<td>VolumeWriteOps</td>
+<td>117.2661</td>
+<td>43216.0</td>
+</tr>
+
+</table>
+
+<div class="note">
+
+EBS observations should be interpreted together with volume type,
+workload characteristics, I/O requirements and application behavior.
+Performance metrics alone do not establish that a storage change is
+required.
+
+</div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- ALB -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>6. Application Load Balancer</h2>
+
+<table>
+
+<tr>
+<th>Region</th>
+<th>Resource</th>
+<th>Metric</th>
+<th>Average</th>
+<th>Maximum</th>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>Blu-Green-LB</td>
+<td>RequestCount</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>Blu-Green-LB</td>
+<td>TargetResponseTime</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>Blu-Green-LB</td>
+<td>HTTPCode_Target_4XX_Count</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>Blu-Green-LB</td>
+<td>HTTPCode_Target_5XX_Count</td>
+<td></td>
+<td></td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>Blu-Green-LB</td>
+<td>ActiveConnectionCount</td>
+<td></td>
+<td></td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- ASG -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>7. Auto Scaling</h2>
+
+<table>
+
+<tr>
+<th>Region</th>
+<th>Resource</th>
+<th>Metric</th>
+<th>Average</th>
+<th>Maximum</th>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>ASG -private</td>
+<td>GroupMinSize</td>
+<td>1</td>
+<td>1</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>ASG -private</td>
+<td>GroupDesiredCapacity</td>
+<td>2</td>
+<td>2</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>ASG -private</td>
+<td>GroupMaxSize</td>
+<td>4</td>
+<td>4</td>
+</tr>
+
+<tr>
+<td>us-east-1</td>
+<td>ASG -private</td>
+<td>GroupInServiceInstances</td>
+<td>2</td>
+<td></td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- FINDINGS -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>8. Performance Findings & Recommendations</h2>
+
+<table>
+
+<tr>
+<th>Priority</th>
+<th>Service</th>
+<th>Resource</th>
+<th>Region</th>
+<th>Finding</th>
+<th>Recommendation</th>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>Low observed average CPU activity (1.11%).</td>
+<td>Review workload pattern, instance purpose, and utilization history before considering any sizing change.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>NetworkIn activity was observed with an average CloudWatch datapoint value of 296.14 Bytes. Maximum observed value was 16480.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>NetworkOut activity was observed with an average CloudWatch datapoint value of 217.23 Bytes. Maximum observed value was 5344.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeReadBytes activity was observed. Average CloudWatch datapoint value: 122566.83. Maximum observed value: 191017472.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeWriteBytes activity was observed. Average CloudWatch datapoint value: 3036222.16. Maximum observed value: 108369408.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeReadOps activity was observed. Average CloudWatch datapoint value: 6.79. Maximum observed value: 10591.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeWriteOps activity was observed. Average CloudWatch datapoint value: 49.47. Maximum observed value: 1001.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>Low observed average CPU activity (1.26%).</td>
+<td>Review workload pattern, instance purpose, and utilization history before considering any sizing change.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>NetworkIn activity was observed with an average CloudWatch datapoint value of 295.54 Bytes. Maximum observed value was 17014.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>NetworkOut activity was observed with an average CloudWatch datapoint value of 216.06 Bytes. Maximum observed value was 5384.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-east-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeReadBytes activity was observed. Average CloudWatch datapoint value: 105413.47. Maximum observed value: 191640064.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeWriteBytes activity was observed. Average CloudWatch datapoint value: 2902905.41. Maximum observed value: 91129344.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeReadOps activity was observed. Average CloudWatch datapoint value: 5.83. Maximum observed value: 10611.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-east-1</td>
+<td>EBS VolumeWriteOps activity was observed. Average CloudWatch datapoint value: 51.09. Maximum observed value: 842.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>ALB</td>
+<td></td>
+<td>us-east-1</td>
+<td>Metric data was unavailable for the analysis period.</td>
+<td>Review CloudWatch metric availability, resource configuration, and metric dimensions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>ALB</td>
+<td></td>
+<td>us-east-1</td>
+<td>Metric data was unavailable for the analysis period.</td>
+<td>Review CloudWatch metric availability, resource configuration, and metric dimensions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>ALB</td>
+<td></td>
+<td>us-east-1</td>
+<td>Metric data was unavailable for the analysis period.</td>
+<td>Review CloudWatch metric availability, resource configuration, and metric dimensions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>ALB</td>
+<td></td>
+<td>us-east-1</td>
+<td>Metric data was unavailable for the analysis period.</td>
+<td>Review CloudWatch metric availability, resource configuration, and metric dimensions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>ALB</td>
+<td></td>
+<td>us-east-1</td>
+<td>Metric data was unavailable for the analysis period.</td>
+<td>Review CloudWatch metric availability, resource configuration, and metric dimensions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>AutoScaling</td>
+<td></td>
+<td>us-east-1</td>
+<td>Configured minimum Auto Scaling capacity is 1.</td>
+<td>Validate the minimum capacity against application availability requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>AutoScaling</td>
+<td></td>
+<td>us-east-1</td>
+<td>Configured desired Auto Scaling capacity is 2.</td>
+<td>Validate desired capacity against normal workload and scaling policy.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>AutoScaling</td>
+<td></td>
+<td>us-east-1</td>
+<td>Configured maximum Auto Scaling capacity is 4.</td>
+<td>Validate maximum capacity against expected peak workload.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>AutoScaling</td>
+<td></td>
+<td>us-east-1</td>
+<td>Observed in-service instance count is 2.</td>
+<td>Compare in-service capacity with desired capacity and recent workload.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>Low observed average CPU activity (2.44%). Peak observed CPU reached 100.00%.</td>
+<td>Review workload pattern, instance purpose, and utilization history before considering any sizing change. Correlate the peak timestamp with application activity before making capacity changes.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>NetworkIn activity was observed with an average CloudWatch datapoint value of 806366.56 Bytes. Maximum observed value was 401627042.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>NetworkOut activity was observed with an average CloudWatch datapoint value of 19262.33 Bytes. Maximum observed value was 6763399.00 Bytes.</td>
+<td>Review the time-series trend together with application traffic patterns before drawing capacity conclusions.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EC2</td>
+<td></td>
+<td>us-west-1</td>
+<td>No failed EC2 status checks were observed during the analysis period.</td>
+<td>No action indicated from this metric; continue monitoring.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-west-1</td>
+<td>EBS VolumeReadBytes activity was observed. Average CloudWatch datapoint value: 3340328.93. Maximum observed value: 1415442432.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-west-1</td>
+<td>EBS VolumeWriteBytes activity was observed. Average CloudWatch datapoint value: 6269730.18. Maximum observed value: 2377715712.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-west-1</td>
+<td>EBS VolumeReadOps activity was observed. Average CloudWatch datapoint value: 52.72. Maximum observed value: 16817.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+<tr>
+<td><span class="badge observation">Observation</span></td>
+<td>EBS</td>
+<td></td>
+<td>us-west-1</td>
+<td>EBS VolumeWriteOps activity was observed. Average CloudWatch datapoint value: 117.27. Maximum observed value: 43216.00.</td>
+<td>Review the I/O time-series together with the workload using the volume, volume type, and storage requirements.</td>
+</tr>
+
+</table>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- STATUS CHECKS -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>9. EC2 Health / Status Checks</h2>
+
+<div class="note">
+
+<span class="badge ok">OK</span>
+
+No EC2 status-check failures were observed in the collected
+CloudWatch dataset during the analysis period.
+
+</div>
+
+</div>
+
+
+<!-- ===================================================== -->
+<!-- LIMITATIONS -->
+<!-- ===================================================== -->
+
+<div class="section">
+
+<h2>10. Analysis Notes & Limitations</h2>
+
+<ul>
+
+<li>
+This report is based on the resources and CloudWatch metrics
+successfully collected during the analysis period.
+</li>
+
+<li>
+A low average CPU value does not by itself prove that an EC2
+instance should be downsized.
+</li>
+
+<li>
+A high maximum CPU value does not by itself prove that an instance
+requires permanent capacity expansion. Peak timing and duration
+should be investigated.
+</li>
+
+<li>
+The current performance collection covers EC2, EBS, ALB and
+Auto Scaling resources.
+</li>
+
+<li>
+RDS resources may exist in the account inventory even when RDS
+performance metrics have not yet been included in the master
+performance dataset.
+</li>
+
+<li>
+This report is a performance-observation report and is not a
+complete cost-optimization or security audit.
+</li>
+
+</ul>
+
+</div>
+
+
+<div class="footer">
+
+AWS Master Performance Report<br>
+Generated automatically from AWS Resource Explorer and CloudWatch data.
+
+</div>
+
+
+</div>
+
+</body>
+</html>
