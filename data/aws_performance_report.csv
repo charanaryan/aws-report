@@ -1,0 +1,40 @@
+Region,Service,ResourceType,ResourceId,Metric,Unit,Status,Average,Minimum,Maximum,Datapoints
+us-east-1,EC2,Instance,i-0459f444830363d8a,CPUUtilization,Percent,OK,1.1128,0.0029,13.07,128
+us-east-1,EC2,Instance,i-0459f444830363d8a,NetworkIn,Bytes,OK,295.5774,0.0,16480.0,128
+us-east-1,EC2,Instance,i-0459f444830363d8a,NetworkOut,Bytes,OK,216.2223,0.0,5344.0,128
+us-east-1,EC2,Instance,i-0459f444830363d8a,StatusCheckFailed,Count,OK,0.0,0.0,0.0,128
+us-east-1,EC2,Instance,i-0459f444830363d8a,StatusCheckFailed_Instance,Count,OK,0.0,0.0,0.0,128
+us-east-1,EC2,Instance,i-0459f444830363d8a,StatusCheckFailed_System,Count,OK,0.0,0.0,0.0,128
+us-east-1,EBS,Volume,vol-0f4745da336a024b4,VolumeReadBytes,Bytes,OK,27740.637,0.0,191017472.0,128
+us-east-1,EBS,Volume,vol-0f4745da336a024b4,VolumeWriteBytes,Bytes,OK,2987484.0118,32768.0,108369408.0,128
+us-east-1,EBS,Volume,vol-0f4745da336a024b4,VolumeReadOps,Count,OK,1.5359,0.0,10591.0,128
+us-east-1,EBS,Volume,vol-0f4745da336a024b4,VolumeWriteOps,Count,OK,49.0179,3.0,1001.0,128
+us-east-1,EC2,Instance,i-014980792be5e5138,CPUUtilization,Percent,OK,1.2452,0.0014,12.6083,129
+us-east-1,EC2,Instance,i-014980792be5e5138,NetworkIn,Bytes,OK,294.9285,0.0,17014.0,128
+us-east-1,EC2,Instance,i-014980792be5e5138,NetworkOut,Bytes,OK,214.9996,0.0,5384.0,128
+us-east-1,EC2,Instance,i-014980792be5e5138,StatusCheckFailed,Count,OK,0.0,0.0,0.0,128
+us-east-1,EC2,Instance,i-014980792be5e5138,StatusCheckFailed_Instance,Count,OK,0.0,0.0,0.0,128
+us-east-1,EC2,Instance,i-014980792be5e5138,StatusCheckFailed_System,Count,OK,0.0,0.0,0.0,128
+us-east-1,EBS,Volume,vol-00d63f2da91dfa655,VolumeReadBytes,Bytes,OK,26840.3381,0.0,191640064.0,128
+us-east-1,EBS,Volume,vol-00d63f2da91dfa655,VolumeWriteBytes,Bytes,OK,2863737.1873,28672.0,91129344.0,128
+us-east-1,EBS,Volume,vol-00d63f2da91dfa655,VolumeReadOps,Count,OK,1.484,0.0,10611.0,128
+us-east-1,EBS,Volume,vol-00d63f2da91dfa655,VolumeWriteOps,Count,OK,50.7007,3.0,842.0,128
+us-east-1,ALB,ApplicationLoadBalancer,Blu-Green-LB,RequestCount,Count,NO_DATA,,,,0
+us-east-1,ALB,ApplicationLoadBalancer,Blu-Green-LB,TargetResponseTime,Seconds,NO_DATA,,,,0
+us-east-1,ALB,ApplicationLoadBalancer,Blu-Green-LB,HTTPCode_Target_4XX_Count,Count,NO_DATA,,,,0
+us-east-1,ALB,ApplicationLoadBalancer,Blu-Green-LB,HTTPCode_Target_5XX_Count,Count,NO_DATA,,,,0
+us-east-1,ALB,ApplicationLoadBalancer,Blu-Green-LB,ActiveConnectionCount,Count,NO_DATA,,,,0
+us-east-1,AutoScaling,AutoScalingGroup,ASG -private,GroupMinSize,Count,API,1,1,1,1
+us-east-1,AutoScaling,AutoScalingGroup,ASG -private,GroupDesiredCapacity,Count,API,2,2,2,1
+us-east-1,AutoScaling,AutoScalingGroup,ASG -private,GroupMaxSize,Count,API,4,4,4,1
+us-east-1,AutoScaling,AutoScalingGroup,ASG -private,GroupInServiceInstances,Count,API,2,,,1
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,CPUUtilization,Percent,OK,2.1012,0.0007,100.0,90
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,NetworkIn,Bytes,OK,343177.6266,0.0,401627042.0,90
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,NetworkOut,Bytes,OK,16097.5893,0.0,6763399.0,90
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,StatusCheckFailed,Count,OK,0.0,0.0,0.0,89
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,StatusCheckFailed_Instance,Count,OK,0.0,0.0,0.0,89
+us-west-1,EC2,Instance,i-05c761bb30cd029a1,StatusCheckFailed_System,Count,OK,0.0,0.0,0.0,89
+us-west-1,EBS,Volume,vol-0ee5e27a823c11a3e,VolumeReadBytes,Bytes,OK,4468263.378,0.0,1415442432.0,90
+us-west-1,EBS,Volume,vol-0ee5e27a823c11a3e,VolumeWriteBytes,Bytes,OK,8022757.3469,0.0,2377715712.0,90
+us-west-1,EBS,Volume,vol-0ee5e27a823c11a3e,VolumeReadOps,Count,OK,107.491,0.0,16817.0,90
+us-west-1,EBS,Volume,vol-0ee5e27a823c11a3e,VolumeWriteOps,Count,OK,100.1469,0.0,43216.0,90

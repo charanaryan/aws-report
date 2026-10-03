@@ -1,0 +1,13 @@
+Section,Metric,Value,Observation
+Overview,Analysis Period,Last 7 days,CloudWatch performance analysis period.
+Overview,Metric Rows Analyzed,39,Rows collected from the master performance report.
+Overview,Regions,2,"us-east-1, us-west-1"
+Overview,Services,4,"ALB, AutoScaling, EBS, EC2"
+Resources,EC2 Instances,3,EC2 instances with collected performance metrics.
+Resources,EBS Volumes,3,EBS volumes with collected performance metrics.
+Resources,Application Load Balancers,1,ALB resources with collected performance metrics.
+Resources,Auto Scaling Groups,1,Auto Scaling groups with collected metrics.
+Resources,RDS Resources,0,RDS resources with collected performance metrics.
+EC2,Low Average CPU Instances,3,Instances with average CPU utilization below 5% during the analyzed period.
+EC2,CPU Peak Instances,1,Instances where maximum observed CPU utilization reached or exceeded 90%.
+EC2,Status Check Failure Events,0,Observed status-check failure metrics with a maximum value greater than zero.
